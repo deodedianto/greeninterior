@@ -1633,6 +1633,7 @@ opacity: 0.8;
 
 .partner-carousel  .partner-carousel-item img{
   max-width: 150px;
+  max-height: 150px;
   margin: auto;
   opacity: 0.6;
   -webkit-transition: all 0.5s;
