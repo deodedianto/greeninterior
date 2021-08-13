@@ -431,4 +431,25 @@
 		});
 	}
 
+	/*-------------------------------------------------------------------------------
+	  Open modal using scroll depth
+	-------------------------------------------------------------------------------*/
+	jQuery(function () {
+		jQuery.scrollDepth({
+			elements: ['#about', '#projects', '#clients', '#services', '#team', '#contacts'],
+			eventHandler: function(data) {
+				const EVENT_NAME = 'ScrollDistance';
+				const TARGET_ID_ELEMENT = '#services';
+				
+				let hasOpened = false;
+				const { event, eventLabel } = data;
+				const isVisible = event === EVENT_NAME && eventLabel === TARGET_ID_ELEMENT && !hasOpened;
+				if (isVisible) {
+					$('#myModal').modal('show');
+					hasOpened = true;
+				}
+			}
+		});
+	});
+
 })(jQuery);
