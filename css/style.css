@@ -2982,3 +2982,26 @@ opacity: 0.8;
   background-color: rgba(0, 0, 0, 0.8);
   color:#FFF;
 }
+
+@media (max-width: 1199px) {
+  .section .cta {
+    border-radius: 36px;
+    font-size: 20px;
+    padding: 12px 16px;
+    color: #000;
+  }
+
+  .section .cta:hover {
+    text-decoration: none;
+    background-color: #cee002;
+  }
+  .section-projects .cta, .row-services .cta {
+    padding: 12px 36px;
+  }
+}
+
+@media (min-width: 1200px){
+  .section .cta {
+    display: none !important;
+  }
+}
