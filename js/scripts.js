@@ -154,30 +154,6 @@
 
 
 
-		/* Project Carousel */
-
-
-
-	   $('.project-carousel').owlCarousel({
-		    dots:true,
-		    margin:30,
-		    smartSpeed:250,
-		    responsiveRefreshRate:0,
-		    responsive:{
-		        0:{
-		            items:1
-		        },
-		        768:{
-		            items:2
-		        },
-		        1200:{
-		            items:3
-		        },
-		        1600:{
-		            items:4
-		        }
-		    }
-		});
 
 
 
@@ -431,4 +407,71 @@
 		});
 	}
 
+	/*-------------------------------------------------------------------------------
+	  Open modal using scroll depth
+	-------------------------------------------------------------------------------*/
+	jQuery(function () {
+		jQuery.scrollDepth({
+			elements: ['#about', '#projects', '#clients', '#services', '#team', '#contacts'],
+			eventHandler: function(data) {
+				const EVENT_NAME = 'ScrollDistance';
+				const TARGET_ID_ELEMENT = '#services';
+				
+				let hasOpened = false;
+				const { event, eventLabel } = data;
+				const isVisible = event === EVENT_NAME && eventLabel === TARGET_ID_ELEMENT && !hasOpened;
+				if (isVisible) {
+					$('#myModal').modal('show');
+					hasOpened = true;
+				}
+			}
+		});
+	});
+
+	/*-------------------------------------------------------------------------------
+	  Render project categories
+	-------------------------------------------------------------------------------*/
+
+	$(document).ready(function () {
+		const projectStructureElement = (data) => `
+			<a href="#${data.id}" class="project-item item-shadow popup-with-zoom-anim building">
+				<img alt="${data.name}" class="img-responsive crop" src="${data.src}">
+				<div class="project-hover">
+					<div class="project-hover-content">
+						<h3 class="project-title">${data.name}</h3>
+					</div>
+				</div>
+				<span class="link-arrow">See project <i class="icon ion-ios-arrow-right"></i></span>
+			</a>
+		`
+
+		$.getJSON( "http://localhost:8080/data/project-categories.json", function({ data }) {
+			$('#project-categories').html('<div id="testing" class="owl-carousel project-carousel"></div>')
+
+			data.forEach(function(item) {
+				$('.project-carousel').append(projectStructureElement(item));
+			})
+
+			$('.project-carousel').owlCarousel({
+				dots:true,
+				margin:30,
+				smartSpeed:250,
+				responsiveRefreshRate:0,
+				responsive:{
+						0:{
+								items:1
+						},
+						768:{
+								items:2
+						},
+						1200:{
+								items:3
+						},
+						1600:{
+								items:4
+						}
+				}
+			});
+		})
+	})
 })(jQuery);
