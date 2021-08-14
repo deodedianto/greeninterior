@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": "project1",
+      "name": "Gunawangsa Tidar Apartement - 2 Bed Room",
+      "src": "images/projects/Mr. Hadi  - Gunawangsa Tidar Apartement/IMG-20200929-WA0013.webp"
+    },
+    {
+      "id": "project2",
+      "name": "Perum. Citragarden - Kamar Utama",
+      "src": "images/projects/Mrs. Novi - Perum. Citragarden/IMG-20200903-WA0001.webp"
+    },
+    {
+      "id": "project3",
+      "name": "Perum. Pakuwon - Kamar Anak",
+      "src": "images/projects/Mrs. Nining - Perum. Pakuwon/IMG-20200812-WA0005.webp"
+    },
+    {
+      "id": "project4",
+      "name": "Anderson Apartment - 1 Bed Room",
+      "src": "images/projects/Mr. Hadi - Anderson Apartment/IMG-20181213-WA0006.webp"
+    },
+    {
+      "id": "project5",
+      "name": "Royal Residance - Kamar Utama",
+      "src": "images/projects/Mrs. Sofi - Royal Residance/IMG-20210312-WA0011.webp"
+    },
+    {
+      "id": "project6",
+      "name": "Perum. Malang - Dapur",
+      "src": "images/projects/Mrs. Titis - Malang/IMG-20200902-WA0006.webp"
+    },
+    {
+      "id": "project7",
+      "name": "Perum. Citragarden - Ruang Keluarga",
+      "src": "images/projects/Mrs. Novi - Citragarden/IMG-20200911-WA0001.webp"
+    },
+    {
+      "id": "project6",
+      "name": "Prospero Apartment - Studio",
+      "src": "images/projects/Mrs. Yuni - Prospero Apartment/IMG-20210526-WA0004.webp"
+    }
+  ]
+}
