@@ -36,23 +36,49 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+  <!-- Consultation Modal -->
+  <div class="modal fade" id="consultationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Lorem ipsum dolor sit amet</h4>
+      </div>
+        <div class="modal-body text-center">
+          <h5>
+            Dapatkan Gratis Konsultasi, Klik Tombol Dibawah Ini
+          </h5>
+          <div>
+            <a class="cta" target="_blank" href="https://wa.me/081283056404?text=Halo GreenInterior">
+              Konsultasi
+            </a>
+          </div>
         </div>
-        <div class="modal-body">
-          Lorem ipsum dolor sit amet, ad agam assum his, sit et harum insolens, sit et viderer delectus similique. Vix fabulas
-          adolescens efficiendi te. Vis suas erant tation eu, ad possit docendi maluisset duo, has atqui oportere et. Brute
-          quaestio hendrerit mea an. An mel tollit dictas similique, illum facer corpora his ne, ne est posse dicant eleifend.
+      </div>
+    </div>
+  </div>
+
+  <!-- Calculate Estimation Modal -->
+
+  <div class="modal fade" id="estimationPrice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+        <div class="modal-body text-center">
+          <h5>
+            8 dari 10 klien setuju bahwa harga terjangkau
+          </h5>
+          <strong style="font-size: 16px; color: #000; margin-bottom: 8px;">Luas bangunan m2</strong>
+          <form id="target" name="calculateEstimatedPrice">
+            <div class="input-group">
+              <input id="buildingAreaInput" type="number" class="form-control" placeholder="Masukkan luas bangunan" aria-describedby="m2" />
+              <span class="input-group-addon" id="m2">m2</span>
+            </div>
+          </form>
+          <br />
+          <button id="calculate" class="cta">Hitung</button>
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
       </div>
     </div>
   </div>
