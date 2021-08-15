@@ -431,4 +431,99 @@
 		});
 	}
 
+	/*-------------------------------------------------------------------------------
+		Open consultation modal using scroll depth
+	-------------------------------------------------------------------------------*/
+
+	let hasOpenedCounsultationModal = false;
+
+	function isVisibleConsultationModal({ event, eventLabel }) {
+		const EVENT_NAME = 'ScrollDistance';
+		const TARGET_ELEMENT = '#contacts .contact-address';
+		
+		return event === EVENT_NAME && eventLabel === TARGET_ELEMENT && !hasOpenedCounsultationModal;
+	}
+
+	function openConsultationModal() {
+		$('#consultationModal').modal('show');
+	}
+	
+	jQuery(function () {
+		jQuery.scrollDepth({
+			elements: ['#about', '#projects', '#clients', '#services', '#team', '#contacts', '#contacts .contact-address'],
+			eventHandler: function(data) {
+				if (isVisibleConsultationModal(data)) {
+					openConsultationModal();
+					hasOpenedCounsultationModal = !hasOpenedCounsultationModal;
+				}
+			}
+		});
+	});
+
+	$('.modal .close').click(function() {
+		$('#consultationModal').modal('hide')
+	});
+
+
+	/*-------------------------------------------------------------------------------
+		Estimation price modal
+	-------------------------------------------------------------------------------*/
+	$(window).on('load', function() {
+		$('#estimationPrice').modal('show');
+	});
+
+	document.getElementById("buildingAreaInput").addEventListener("keypress", function (evt) {
+    if (evt.code === 'KeyE' || evt.code === 'Minus') {
+			evt.preventDefault();
+		}	
+	});
+
+	const formatIDRCurrency = function(num){
+		let str = num.toString().replace("", ""), parts = false, output = [], i = 1, formatted = null;
+		
+		if (str.indexOf(".") > 0) {
+			parts = str.split(".");
+			str = parts[0];
+		}
+
+		str = str.split("").reverse();
+
+		for(var j = 0, len = str.length; j < len; j++) {
+			if(str[j] != ",") {
+				output.push(str[j]);
+				if(i%3 == 0 && j < (len - 1)) {
+					output.push(",");
+				}
+				i++;
+			}
+		}
+
+		formatted = output.reverse().join("");
+
+		return("" + formatted + ((parts) ? "." + parts[1].substr(0, 2) : ""));
+	};
+
+	$( "#calculate" ).click(function( event ) {
+		const PRICE_PER_M2 = 1750000;
+		const buildingArea = Number($('#buildingAreaInput').val());
+		const estimationPrice = buildingArea * PRICE_PER_M2;
+		const renderHtml = `
+			<h4 style="margin: 0 auto;">
+				Estimasi biaya:
+			</h4>
+			<h5 style="font-size: 16px; color: #000; margin: 0px auto;">Rp.${formatIDRCurrency(estimationPrice)}</h5>
+			<br />
+			<div>
+				<a class="cta" target="_blank" href="https://wa.me/081283056404?text=Halo GreenInterior">
+					Konsultasi
+				</a>
+			</div>
+		`
+
+		if (!!buildingArea) {
+			$('#estimationPrice .modal-body').html(renderHtml)
+		}
+
+		event.preventDefault();
+	});
 })(jQuery);

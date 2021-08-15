@@ -3005,3 +3005,53 @@ opacity: 0.8;
     display: none !important;
   }
 }
+
+@media (min-width: 480px){
+  .modal-centered {
+    width: 500px;
+    margin: 0px auto;
+  }
+}
+
+.modal .close {
+  margin-top: 8px;
+}
+
+.modal .cta {
+  border-radius: 36px;
+  font-size: 20px;
+  color: #000;
+}
+
+.modal .cta:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal .cta:hover {
+    color: #cee002;
+    text-decoration: none;
+}
+
+.modal-centered {
+  top: 50%;
+  transform: translateY(-50%) !important;
+}
+
+.modal-header {
+  padding-top: 0;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+}
+
+#estimationPrice .cta {
+  padding: 12px 36px;
+}
+
+#estimationPrice .input-group {
+  max-width: 275px;
+  margin: 0px auto;
+}
+
+#estimationPrice button {
+  line-height: normal;
+}
