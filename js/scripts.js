@@ -509,13 +509,13 @@
 		const estimationPrice = buildingArea * PRICE_PER_M2;
 		const renderHtml = `
 			<h4 style="margin: 0 auto;">
-				Estimasi biaya:
+				Estimasi Biaya:
 			</h4>
 			<h5 style="font-size: 16px; color: #000; margin: 0px auto;">Rp.${formatIDRCurrency(estimationPrice)}</h5>
 			<br />
 			<div>
 				<a class="cta" target="_blank" href="https://wa.me/081283056404?text=Halo GreenInterior">
-					Konsultasi
+					Order Now
 				</a>
 			</div>
 		`
