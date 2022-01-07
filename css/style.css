@@ -1096,6 +1096,7 @@ a.brand:focus{
   line-height: 1;
   font-weight: 600;
   color: #000;
+  cursor: pointer;
 }
 
 .experience-info{
